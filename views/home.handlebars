@@ -1,0 +1,11 @@
+<body>
+    {{#each post}}
+<div class="container-fluid">
+    <div class="post-header">
+    <h2>{{post_title}}</h2>
+    <h3>Posted by {{post_user}} on {{post_date}}</h3>
+    </div>
+    <p>{{post_content}}</p>
+</div>
+    {{/each}}
+</body>
