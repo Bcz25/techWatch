@@ -14,11 +14,11 @@ Comment.init(
       allowNull: false,
       primaryKey: true,
     },
-    comment_text: {
+    text: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    user: {
+    author: {
       type: DataTypes.STRING,
       references: {
         model: 'user',

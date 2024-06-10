@@ -23,10 +23,9 @@ Post.init(
     },
     date_created: {
       type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
+      defaultValue: DataTypes.NOW
     },
-    user: {
+    username: {
       type: DataTypes.STRING,
       references: {
         model: 'user',
@@ -40,7 +39,7 @@ Post.init(
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'comment',
+    modelName: 'post',
   }
 );
 
