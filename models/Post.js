@@ -13,15 +13,24 @@ Post.init(
       allowNull: false,
       primaryKey: true,
     },
-    post_text: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    text: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    date_created: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
     user: {
       type: DataTypes.STRING,
       references: {
         model: 'user',
-        key: 'user_name',
+        key: 'name',
         unique: false
       }
     },

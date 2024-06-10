@@ -1,11 +1,17 @@
-<body>
-    {{#if logged_in}}
-    {{#each myPost}}
-   <div class="container-fluid myPosts">
+{{#if logged_in}}
+{{#each posts as |post|}} 
+   <div class="container-fluid">
     {{!when i click on post I will be taken to a page to edit that post}}
-        <h2>{{myPost_title}}</h2>
-        <h3>Posted on {{myPost_date}}</h3>
+    <a href="/edit/{{post.id}}">
+        <div class="container-fluid">
+            <h2>{{post.title}}</h2>
+            <h3>Posted on {{format_date post.date_created}}</h3>
+        </div>
+    </a>
     </div>  
     {{/each}}
-    <button type="button" id= "newPost-bttn" class="btn btn-primary btn-lg">New Post</button>
+<a href="/dashboard/new">
+    <button type="button"  class="btn btn-primary btn-lg">New Post</button>
+</a>
+    {{/if}}
 </body>
