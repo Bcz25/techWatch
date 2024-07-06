@@ -1,10 +1,12 @@
-
-{{#each posts as |post|}}
-<div class="container-fluid">
-    <div class="post-header">
-    <h2>{{post.title}}</h2>
-    <h3>Posted by {{post.user.name}} on {{format_date post.date_created}}</h3>
+<!-- Display all posts -->
+{{#each posts}}
+<div class="m-2 bg-gray-200 p-4 rounded shadow">
+ <h3 id="post-title" class="text-xl font-semibold post-title">Post <span class= "italic text-sm font-light">By </span></h3>
+    <div class= "m-4">
+        <p id="post-content" class="post-content">Post content</p>
     </div>
-    <p>{{post.text}}</p>
+    <button
+    type=""
+    class="flex rounded-md bg-blue-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Comments
+    </button>
 </div>
-{{/each}}
