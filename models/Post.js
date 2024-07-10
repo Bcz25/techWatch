@@ -9,13 +9,15 @@ Post.init(
     // define columns
     id: {
       type: DataTypes.INTEGER,
-      autoincrement: true,
-      allowNull: false,
+      autoIncrement: true,
       primaryKey: true,
     },
     title: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    author: {
+      type: DataTypes.STRING,
     },
     text: {
       type: DataTypes.STRING,
@@ -25,11 +27,11 @@ Post.init(
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW
     },
-    username: {
-      type: DataTypes.STRING,
+    userId: {
+      type: DataTypes.INTEGER,
       references: {
         model: 'user',
-        key: 'name',
+        key: 'id',
         unique: false
       }
     },

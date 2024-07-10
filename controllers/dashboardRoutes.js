@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Post } = require('../models');
 const withAuth = require('../utils/authGuard');
+const { post } = require('./dashboardRoutes');
 
 // Use withAuth middleware to prevent access to route
 router.get('/', withAuth, async (req, res) => {
@@ -10,8 +11,10 @@ router.get('/', withAuth, async (req, res) => {
         attributes: { exclude: ['password'] },
         include: [{ model: Post }],
       });
+      console.log(userData);
   
       const user = userData.get({ plain: true });
+      console.log(user);  
   
       res.render('dashboard', {
         ...user,

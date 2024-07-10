@@ -10,7 +10,7 @@ Comment.init(
     // define columns
     id: {
       type: DataTypes.INTEGER,
-      autoincrement: true,
+      autoIncrement: true,
       allowNull: false,
       primaryKey: true,
     },
@@ -20,9 +20,19 @@ Comment.init(
     },
     author: {
       type: DataTypes.STRING,
+    },
+    postId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'post',
+        key: 'id',
+      }
+    },
+    userId: {
+      type: DataTypes.INTEGER,
       references: {
         model: 'user',
-        key: 'name',
+        key: 'id',
         unique: false
       }
     },

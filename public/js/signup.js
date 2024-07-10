@@ -18,7 +18,7 @@ document
         });
         // This if statement checks if the response is okay.
         if (response.ok) {
-          document.location.replace("/profile");
+          document.location.replace("/dashboard");
         } else {
           alert("Failed to sign up");
         }
